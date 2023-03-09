@@ -1,0 +1,45 @@
+:root {
+  --navcolor: #7d5d9e;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.navbar {
+  background-color: #7d5d9e;
+}
+
+.navbar-brand {
+  padding: 10px;
+}
+
+.groups {
+  display: inline-flex;
+  background-color: aqua;
+}
+
+.groupBox {
+  display: grid;
+  background-color: red;
+}
+
+.btn-group {
+  background-color: green;
+  margin: 3px;
+}
+
+.name {
+  width: 25%;
+  margin-bottom: 20px;
+}
