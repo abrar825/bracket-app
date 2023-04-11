@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { MDBRadio, MDBBtnGroup } from "mdb-react-ui-kit";
+import Group from "./group";
 
 class GroupStage extends Component {
   state = {
@@ -7,65 +7,25 @@ class GroupStage extends Component {
     matchups: [],
   };
 
-  matchPicks = [{ matchCode: "", pick: "" }];
+  matchPicks = new Map(); // matchCode: "", pick: ""
 
-  generateMatchups = (teams) => {
-    let teamsDup = [...teams];
-    let matchups = [];
-    for (let team of teams) {
-      for (let opponent of teamsDup) {
-        if (team !== opponent) {
-          matchups.push([team, opponent]);
-          this.matchPicks.push({ matchCode: team + "v" + opponent, pick: "" });
-          console.log("i");
-        }
-      }
-      teamsDup.splice(0, 1);
-    }
-    return matchups;
+  handleGroupMatchOnClick = (id, label) => {
+    this.matchPicks.set(id, label);
+    console.log("Hey!");
+    console.log(this.matchPicks);
   };
-
-  handleGroupMatchOnClick = (pick) => {};
 
   render() {
     const { teams } = this.state;
-    let matchups = this.generateMatchups(teams);
-    console.log(this.matchPicks);
 
-    let matchList = matchups.map((match) => (
-      <MDBBtnGroup className="btn-group">
-        <MDBRadio
-          className="btn"
-          btn
-          btnColor="primary"
-          id={match[0] + match[1]}
-          name={match[0] + "v" + match[1]}
-          wrapperTag="span"
-          label={match[0]}
-        />
-        <MDBRadio
-          className="btn"
-          btn
-          btnColor="primary"
-          id={"Draw" + match[0] + match[1]}
-          name={match[0] + "v" + match[1]}
-          wrapperClass="mx-2"
-          wrapperTag="span"
-          label={"Draw"}
-          defaultChecked
-        />
-        <MDBRadio
-          className="btn"
-          btn
-          btnColor="primary"
-          id={match[1] + match[0]}
-          name={match[0] + "v" + match[1]}
-          wrapperTag="span"
-          label={match[1]}
-        />
-      </MDBBtnGroup>
+    let groups = teams.map((group) => (
+      <Group
+        teams={group}
+        groupMatchOnClick={this.handleGroupMatchOnClick}
+      ></Group>
     ));
-    return <div className="groupBox m-2">{matchList}</div>;
+
+    return groups;
   }
 }
 

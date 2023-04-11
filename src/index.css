@@ -31,12 +31,16 @@ code {
 
 .groupBox {
   display: grid;
-  background-color: red;
+  /*background-color: red;*/
 }
 
 .btn-group {
-  background-color: green;
+  /*background-color: green;*/
   margin: 3px;
+}
+
+.btn {
+  width: 60px;
 }
 
 .name {

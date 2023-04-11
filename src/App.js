@@ -13,6 +13,17 @@ const groups = [
   { groupName: "Group H", teams: ["GHA", "POR", "ROK", "URU"] },
 ];
 
+const theGroups = [
+  ["QAT", "ECU", "SEN", "NED"],
+  ["ENG", "IRN", "USA", "WAL"],
+  ["ARG", "POL", "KSA", "MEX"],
+  ["AUS", "DEN", "FRA", "TUN"],
+  ["CRC", "GER", "JAP", "ESP"],
+  ["BEL", "CAN", "CRO", "MAR"],
+  ["BRA", "CMR", "SRB", "SUI"],
+  ["GHA", "POR", "ROK", "URU"],
+];
+
 function App() {
   console.log(groups);
   return (
@@ -34,14 +45,7 @@ function App() {
         </div>
       </form>
       <div className="groups">
-        <GroupStage teams={groups[0].teams} />
-        <GroupStage teams={groups[1].teams} />
-        <GroupStage teams={groups[2].teams} />
-        <GroupStage teams={groups[3].teams} />
-        <GroupStage teams={groups[4].teams} />
-        <GroupStage teams={groups[5].teams} />
-        <GroupStage teams={groups[6].teams} />
-        <GroupStage teams={groups[7].teams} />
+        <GroupStage teams={theGroups} />
       </div>
     </div>
   );
