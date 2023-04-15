@@ -26,7 +26,7 @@ code {
 
 .groups {
   display: inline-flex;
-  background-color: aqua;
+  background-color: red;
 }
 
 .groupBox {

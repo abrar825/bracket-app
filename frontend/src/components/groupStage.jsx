@@ -25,6 +25,7 @@ class GroupStage extends Component {
       ></Group>
     ));
 
+    let submit = <button>submit</button>;
     return groups;
   }
 }

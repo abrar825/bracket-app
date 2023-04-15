@@ -47,6 +47,9 @@ function App() {
       <div className="groups">
         <GroupStage teams={theGroups} />
       </div>
+      <a class="btn btn-success btn-sm " role="button">
+        Submit{" "}
+      </a>
     </div>
   );
 }
